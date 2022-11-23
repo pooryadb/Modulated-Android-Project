@@ -1,6 +1,6 @@
 # Modulated-Android-Project
 
-This is a base Android-Project, focused on Modularization-Patterns.
+This is a base Android project template, focused on Modularization-Patterns.
 
 ## modules & dependencies
 
