@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ir.pooryadb.xappnamex.core.baseUi.component.BaseFragment
+import ir.pooryadb.xappnamex.core.baseUi.component.observeMessages
 import ir.pooryadb.xappnamex.feature.product.databinding.FragmentProductsBinding
 import javax.inject.Inject
 
@@ -36,6 +37,8 @@ class ProductsFragment : BaseFragment<FragmentProductsBinding>() {
 
     override fun initObservers() {
         super.initObservers()
+
+        observeMessages(productViewModel)
 
         productViewModel.productsLiveData.observe(this) {
             productAdapter.submitList(it)

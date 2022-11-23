@@ -7,6 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import ir.pooryadb.xappnamex.core.baseUi.BaseViewModel
+import ir.pooryadb.xappnamex.core.baseUi.MessageResult
+import ir.pooryadb.xappnamex.core.baseUi.ext.toast
 import ir.pooryadb.xappnamex.core.baseUi.state.AppFragment
 import ir.pooryadb.xappnamex.core.baseUi.utils.state.AppFragmentEnum
 
@@ -61,7 +64,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         initObservers()
     }
 
-    protected fun loadingDialog(show: Boolean = true) {
+    fun loadingDialog(show: Boolean = true) {
         if (show) dialogLoading.show() else dialogLoading.dismiss()
     }
 
@@ -78,4 +81,13 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         windowInsetsHelper.isAutoResizeKeyboard = fragmentEnum.resizeInputMode()
     }
 
+}
+
+fun BaseFragment<*>.observeMessages(viewModel: BaseViewModel) {
+    viewModel.liveMessage.observe(this) {
+        when (it) {
+            is MessageResult.Error -> requireContext().toast(it.getMessage(requireContext()))
+            is MessageResult.Loading -> loadingDialog(it.show)
+        }
+    }
 }

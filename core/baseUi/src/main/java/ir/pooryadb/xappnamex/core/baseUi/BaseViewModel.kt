@@ -35,13 +35,17 @@ open class BaseViewModel : ViewModel() {
     ) = viewModelScope.launch {
         flow.asResult().collect {
             when (it) {
-                is MyResult.Error -> _liveMessage.postValue(
-                    MessageResult.Error(
-                        msg = it.throwable.message ?: "Error"
+                is MyResult.Error -> {
+                    _liveMessage.postValue(MessageResult.Loading(show = false))
+                    _liveMessage.postValue(
+                        MessageResult.Error(msg = it.throwable.message ?: "Error")
                     )
-                )
+                }
                 MyResult.Loading -> _liveMessage.postValue(MessageResult.Loading(show = true))
-                is MyResult.Success -> observeFunction.invoke(it.data)
+                is MyResult.Success -> {
+                    _liveMessage.postValue(MessageResult.Loading(show = false))
+                    observeFunction.invoke(it.data)
+                }
             }
         }
     }
