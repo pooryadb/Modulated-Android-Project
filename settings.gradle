@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "xappnamex"
+include(':app')
+include(":core:baseUi")
+include(":core:common")
+include(":core:data")
+include(":core:domain")
+include(":core:model")
+include(":core:network")
+//include(":feature:author")
+include ':feature:product'

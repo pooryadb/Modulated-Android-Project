@@ -1,0 +1,52 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("com.google.dagger.hilt.android")
+}
+
+apply from: "$rootDir/dependencies.gradle"
+
+android {
+    namespace "ir.pooryadb.xappnamex.core.network"
+    compileSdkVersion compileSdkV
+
+    defaultConfig {
+        minSdk minSdkV
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+
+        product {
+            buildConfigField("String", "BACKEND_URL_BASE", "\"https://dummyjson.com/\"")
+        }
+
+        develop {
+            buildConfigField("String", "BACKEND_URL_BASE", "\"https://dummyjson.com/\"")
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation project(":core:common")
+
+    implementation deps.hilt
+    kapt deps.hilt_kapt
+    kapt deps.hilt_androidx_kapt
+    implementation deps.hilt_androidx_navFrag
+
+    implementation deps.retrofit
+    implementation deps.retrofitGsonConverter
+    implementation deps.gson
+    implementation deps.okhttpLogInterceptor
+
+    implementation deps.coroutineAndroid
+}

@@ -1,0 +1,99 @@
+buildscript {
+    ext {
+
+        compileSdkV = 32
+        targetSdkV = 32
+        minSdkV = 21
+        appVersionCode = 1
+        appVersionName = "1.0.0"
+
+        versions = [
+                'coreKtx'             : '1.7.0',
+                'appcompat'           : '1.5.1',
+                'material'            : '1.7.0',
+                'materialV17'         : '1.7.0',
+                'constraintlayout'    : '2.1.4',
+                'recyclerview'        : '1.2.1',
+                'splashscreen'        : '1.0.0',
+                'coordinator'         : '1.2.0',
+
+                'lifecycleLivedataKtx': '2.4.1',
+                'lifecycleViewmodel'  : '2.4.1',
+                'lifecycleService'    : '2.4.1',
+
+                'navigation_all'      : '2.4.2',
+
+                'hilt'                : '2.42',
+                'hiltAndroid'         : '1.0.0',
+
+                'gson'                : '2.9.0',
+                'retrofit'            : '2.9.0',
+                'okhttp'              : '4.9.0',
+
+                'coroutineAndroid'    : '1.6.4',
+
+                'pref'                : '1.1.1',
+                'room'                : '2.2.5',
+
+                'junit'               : '4.13',
+                'coreTesting'         : '1.1.1',
+                'mockito'             : '2.27.0',
+                'mockitoKotlin'       : '2.2.0',
+                'coroutinesTest'      : '1.3.3'
+        ]
+
+
+        deps = [
+                'coreKtx'                         : "androidx.core:core-ktx:$versions.coreKtx",
+                'splashscreen'                    : "androidx.core:core-splashscreen:$versions.splashscreen",
+
+                'appcompat'                       : "androidx.appcompat:appcompat:$versions.appcompat",
+                'material'                        : "com.google.android.material:material:$versions.material",
+                'materialV17'                     : "com.google.android.material:material:$versions.materialV17",
+                'constraintlayout'                : "androidx.constraintlayout:constraintlayout:$versions.constraintlayout",
+                'recyclerview'                    : "androidx.recyclerview:recyclerview:$versions.recyclerview",
+                'coordinator'                     : "androidx.coordinatorlayout:coordinatorlayout:$versions.coordinator",
+
+                'lifecycleLivedataKtx'            : "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleLivedataKtx",
+                'lifecycleViewmodelKtx'           : "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycleViewmodel",
+                'lifecycleService'                : "androidx.lifecycle:lifecycle-service:$versions.lifecycleService",
+
+                'navigationFragmentKtx'           : "androidx.navigation:navigation-fragment-ktx:$versions.navigation_all",
+                'navigationUiKtx'                 : "androidx.navigation:navigation-ui-ktx:$versions.navigation_all",
+                'navigationDynamicFeatureFragment': "androidx.navigation:navigation-dynamic-features-fragment:$versions.navigation_all",
+
+                'hilt'                            : "com.google.dagger:hilt-android:$versions.hilt",
+                'hilt_kapt'                       : "com.google.dagger:hilt-compiler:$versions.hilt",
+                'hilt_androidx_kapt'              : "androidx.hilt:hilt-compiler:$versions.hiltAndroid",
+                'hilt_androidx_navFrag'           : "androidx.hilt:hilt-navigation-fragment:$versions.hiltAndroid",
+
+                'gson'                            : "com.google.code.gson:gson:$versions.gson",
+                'retrofit'                        : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+                'retrofitGsonConverter'           : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+
+                'okhttp'                          : "com.squareup.okhttp3:okhttp:$versions.okhttp",
+                'okhttpLogInterceptor'            : "com.squareup.okhttp3:logging-interceptor:$versions.okhttp",
+
+                'coroutineAndroid'                : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutineAndroid",
+
+
+                'room'                            : "androidx.room:room-runtime:$versions.room",
+                'roomCompiler'                    : "androidx.room:room-compiler:$versions.room",
+                'pref'                            : "androidx.preference:preference-ktx:$versions.pref",
+
+                'firebaseCrash'                   : "com.google.firebase:firebase-crashlytics:17.1.1",
+                'firebaseAnalytics'               : "com.google.firebase:firebase-analytics-ktx:17.4.4",
+
+                'junit'                           : "junit:junit:$versions.junit",
+                'coreTesting'                     : "android.arch.core:core-testing:$versions.coreTesting",
+                'mockito'                         : "org.mockito:mockito-core:$versions.mockito",
+                'mockitoKotlin'                   : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockitoKotlin",
+                'coroutinesTest'                  : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutinesTest",
+                'mockServer'                      : 'com.squareup.okhttp3:mockwebserver:4.7.2',
+        ]
+
+
+    }
+
+
+}

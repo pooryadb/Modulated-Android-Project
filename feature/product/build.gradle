@@ -1,0 +1,59 @@
+plugins {
+    id "com.android.library"
+    id "org.jetbrains.kotlin.android"
+    id "kotlin-kapt"
+    id "com.google.dagger.hilt.android"
+    id "kotlin-parcelize"
+    id "androidx.navigation.safeargs.kotlin"
+}
+apply from: "$rootDir/dependencies.gradle"
+
+android {
+    namespace "ir.pooryadb.xappnamex.feature.product"
+    compileSdkVersion compileSdkV
+
+    defaultConfig {
+        minSdk minSdkV
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+
+        product {
+        }
+
+        develop {
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation project(":core:baseUi")
+    implementation project(":core:common")
+    implementation project(":core:model")
+    implementation project(":core:data")
+    implementation project(":core:domain")
+
+    implementation deps.appcompat
+    implementation deps.material
+    implementation deps.constraintlayout
+    implementation deps.recyclerview
+
+    implementation deps.lifecycleLivedataKtx
+    implementation deps.lifecycleViewmodelKtx
+
+    implementation deps.navigationFragmentKtx
+    implementation deps.navigationUiKtx
+    implementation deps.navigationDynamicFeatureFragment
+
+    implementation deps.hilt
+    kapt deps.hilt_kapt
+    kapt deps.hilt_androidx_kapt
+    implementation deps.hilt_androidx_navFrag
+}

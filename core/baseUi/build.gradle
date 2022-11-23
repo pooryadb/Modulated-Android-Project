@@ -1,0 +1,41 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+//    id("kotlin-parcelize")
+}
+
+apply from: "$rootDir/dependencies.gradle"
+
+android {
+    namespace "ir.pooryadb.xappnamex.core.baseUi"
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdk 21
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    kapt {
+        correctErrorTypes true
+        useBuildCache = true
+    }
+}
+
+dependencies {
+    implementation project(":core:common")
+
+    implementation deps.coreKtx
+    implementation deps.appcompat
+    implementation deps.materialV17
+    implementation deps.navigationFragmentKtx
+}

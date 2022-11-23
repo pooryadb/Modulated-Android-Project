@@ -1,0 +1,107 @@
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("com.google.dagger.hilt.android")
+}
+
+apply from: "$rootDir/dependencies.gradle"
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    namespace 'ir.pooryadb.xappnamex'
+    compileSdkVersion compileSdkV
+
+    defaultConfig {
+        applicationId "ir.pooryadb.xappnamex"
+        minSdk minSdkV
+        targetSdk targetSdkV
+        versionCode appVersionCode
+        versionName appVersionName
+
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            crunchPngs true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            ext.enableCrashlytics = false
+            ext.alwaysUpdateBuildId = false
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+
+        product {
+        }
+
+        develop {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+        }
+    }
+
+    signingConfigs {
+        config {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    kapt {
+        correctErrorTypes true
+        useBuildCache = true
+    }
+    lint {
+        abortOnError false
+        checkDependencies true
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+
+    implementation project(":feature:product")
+
+    implementation project(":core:baseUi")
+    implementation project(":core:common")
+    implementation project(":core:data")
+    implementation project(":core:domain")
+    implementation project(":core:model")
+    implementation project(":core:network")
+
+    implementation deps.coordinator
+
+    implementation deps.hilt
+    kapt deps.hilt_kapt
+    kapt deps.hilt_androidx_kapt
+    implementation deps.hilt_androidx_navFrag
+
+    implementation deps.navigationUiKtx
+    implementation deps.splashscreen
+}

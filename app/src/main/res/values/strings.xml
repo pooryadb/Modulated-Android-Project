@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">x AppName x</string>
+    <string name="exit_app">press back twice to exit app</string>
+
+</resources>

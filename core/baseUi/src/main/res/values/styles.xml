@@ -1,0 +1,203 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--  text-->
+
+    <style name="txt.family" parent="">
+        <item name="android:fontFamily">@font/font_family</item>
+        <item name="fontFamily">@font/font_family</item>
+    </style>
+
+    <!-- regular -->
+
+    <style name="txt.h00.regular" parent="txt.family">
+        <item name="android:textSize">11sp</item>
+        <item name="fontWeight">200</item>
+        <item name="android:textFontWeight" tools:targetApi="p">200</item>
+    </style>
+
+    <style name="txt.h0.regular" parent="txt.family">
+        <item name="android:textSize">12sp</item>
+        <item name="fontWeight">200</item>
+        <item name="android:textFontWeight" tools:targetApi="p">200</item>
+    </style>
+
+    <style name="txt.h1.regular" parent="txt.family">
+        <item name="android:textSize">14sp</item>
+        <item name="fontWeight">200</item>
+        <item name="android:textFontWeight" tools:targetApi="p">200</item>
+    </style>
+
+    <style name="txt.h2.regular" parent="txt.family">
+        <item name="android:textSize">16sp</item>
+        <item name="fontWeight">200</item>
+        <item name="android:textFontWeight" tools:targetApi="p">200</item>
+    </style>
+
+    <style name="txt.h3.regular" parent="txt.family">
+        <item name="android:textSize">18sp</item>
+        <item name="fontWeight">200</item>
+        <item name="android:textFontWeight" tools:targetApi="p">200</item>
+    </style>
+
+    <style name="txt.h4.regular" parent="txt.family">
+        <item name="android:textSize">22sp</item>
+        <item name="fontWeight">200</item>
+        <item name="android:textFontWeight" tools:targetApi="p">200</item>
+    </style>
+
+    <!-- light -->
+
+    <style name="txt.h00.light" parent="txt.h00.regular">
+        <item name="fontWeight">100</item>
+        <item name="android:textFontWeight" tools:targetApi="p">100</item>
+    </style>
+
+    <style name="txt.h0.light" parent="txt.h0.regular">
+        <item name="fontWeight">100</item>
+        <item name="android:textFontWeight" tools:targetApi="p">100</item>
+    </style>
+
+    <style name="txt.h1.light" parent="txt.h1.regular">
+        <item name="fontWeight">100</item>
+        <item name="android:textFontWeight" tools:targetApi="p">100</item>
+    </style>
+
+    <style name="txt.h2.light" parent="txt.h2.regular">
+        <item name="fontWeight">100</item>
+        <item name="android:textFontWeight" tools:targetApi="p">100</item>
+    </style>
+
+    <!-- medium -->
+
+    <style name="txt.h00.medium" parent="txt.h00.regular">
+        <item name="fontWeight">400</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+
+    <style name="txt.h0.medium" parent="txt.h0.regular">
+        <item name="fontWeight">400</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+
+    <style name="txt.h1.medium" parent="txt.h1.regular">
+        <item name="fontWeight">400</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+
+    <style name="txt.h2.medium" parent="txt.h2.regular">
+        <item name="fontWeight">400</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+
+    <style name="txt.h3.medium" parent="txt.h3.regular">
+        <item name="fontWeight">400</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+
+    <style name="txt.h4.medium" parent="txt.h4.regular">
+        <item name="fontWeight">400</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+
+    <!-- bold -->
+
+    <style name="txt.h00.bold" parent="txt.h00.regular">
+        <item name="fontWeight">700</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+
+    <style name="txt.h0.bold" parent="txt.h0.regular">
+        <item name="fontWeight">700</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+
+    <style name="txt.h1.bold" parent="txt.h1.regular">
+        <item name="fontWeight">700</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+
+    <style name="txt.h2.bold" parent="txt.h2.regular">
+        <item name="fontWeight">700</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+
+    <style name="txt.h3.bold" parent="txt.h3.regular">
+        <item name="fontWeight">700</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+
+    <style name="txt.h4.bold" parent="txt.h4.regular">
+        <item name="fontWeight">700</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+    </style>
+
+    <!--	text input-->
+
+    <style name="input.outline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">?attr/colorSecondary</item>
+        <item name="prefixTextColor">?attr/colorSecondary</item>
+        <item name="hintTextAppearance">@style/txt.h3.bold</item>
+        <item name="prefixTextAppearance">@style/txt.h3.bold</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+        <!--        <item name="hintAnimationEnabled">false</item>-->
+    </style>
+
+    <!--    bottom sheet-->
+
+    <style name="bottom.sheet.style" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@style/appearance.top.round.card</item>
+        <item name="behavior_skipCollapsed">true</item>
+        <item name="behavior_fitToContents">true</item>
+        <item name="behavior_peekHeight">1000dp</item>
+        <item name="behavior_hideable">true</item>
+        <item name="backgroundTint">?android:colorBackground</item>
+    </style>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Fill the screen -->
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <!-- No backgrounds, titles or window float -->
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+
+    </style>
+
+    <style name="loading">
+        <!-- Fill the screen -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowIsTranslucent">true</item>
+
+        <item name="windowMinWidthMajor">0%</item>
+        <item name="windowMinWidthMinor">0%</item>
+    </style>
+
+    <style name="progress">
+        <item name="minWidth">36dip</item>
+        <item name="maxWidth">36dip</item>
+        <item name="minHeight">36dip</item>
+        <item name="maxHeight">36dip</item>
+    </style>
+
+    <!--    animation-->
+
+    <style name="animation.activity" parent="">
+        <item name="android:windowEnterAnimation">@anim/nav_default_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/nav_default_exit_anim</item>
+
+        <item name="android:activityOpenEnterAnimation">@anim/nav_default_enter_anim</item>
+        <item name="android:activityOpenExitAnimation">@anim/nav_default_exit_anim</item>
+        <item name="android:activityCloseEnterAnimation">@anim/nav_default_enter_anim</item>
+        <item name="android:activityCloseExitAnimation">@anim/nav_default_exit_anim</item>
+    </style>
+
+    <style name="animation.popup_window" parent="">
+        <item name="android:windowEnterAnimation">@anim/popup_in</item>
+        <item name="android:windowExitAnimation">@anim/popup_out</item>
+    </style>
+
+</resources>
