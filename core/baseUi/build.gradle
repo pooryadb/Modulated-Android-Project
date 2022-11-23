@@ -15,6 +15,12 @@ android {
         minSdk 21
     }
 
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -38,4 +44,10 @@ dependencies {
     implementation deps.appcompat
     implementation deps.materialV17
     implementation deps.navigationFragmentKtx
+
+    implementation deps.glide
+    kapt deps.glideKapt
+    implementation deps.androidsvg
+
+
 }

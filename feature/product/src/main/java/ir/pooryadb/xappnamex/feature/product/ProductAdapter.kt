@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import ir.pooryadb.xappnamex.core.baseUi.ext.loadCompat
 import ir.pooryadb.xappnamex.core.model.data.Product
 import ir.pooryadb.xappnamex.feature.product.databinding.ItemProductBinding
 
@@ -35,8 +36,8 @@ class ProductAdapter : ListAdapter<Product, ProductAdapter.ProductVH>(DiffCallba
         fun bind(item: Product) = binding?.apply {
             tvTitle.text = item.title
             tvDescription.text = item.description
-            // TODO: load image 
-//            ivThumbnail.load(item.thumbnailUrl)
+
+            ivThumbnail.loadCompat(item.thumbnailUrl)
 
             root.setOnClickListener {
                 onClickListener?.invoke(item)

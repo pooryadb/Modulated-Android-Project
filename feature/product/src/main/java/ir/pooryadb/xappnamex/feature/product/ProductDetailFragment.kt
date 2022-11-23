@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import ir.pooryadb.xappnamex.core.baseUi.component.BaseFragment
+import ir.pooryadb.xappnamex.core.baseUi.ext.loadCompat
 import ir.pooryadb.xappnamex.feature.product.databinding.FragmentProductDetailBinding
 
 class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding>() {
@@ -18,8 +19,8 @@ class ProductDetailFragment : BaseFragment<FragmentProductDetailBinding>() {
         toolbarProducts.toolbar.title = args.product.title
 
         tvDescription.text = args.product.description
-        // TODO: load image
-//                iv.load(args.product.imageUrl)
+
+        iv.loadCompat(args.product.imageUrl)
     }
 
 }
