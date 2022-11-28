@@ -64,3 +64,10 @@ This is a base Android project template, focused on Modularization-Patterns.
 - [Guide to Android app modularization](https://developer.android.com/topic/modularization)
 - [Now in Android App](https://developer.android.com/topic/modularization)
 - [mvvm arch sample](https://github.com/faruktoptas/mvvm-arch-sample)
+
+## How to use:
+- clone
+- replace all "ir.pooryadb.xappnamex" to your own package name (and rename folders name)
+- replace "xappnamex" to desired app name
+- update "keystore.properties" fields
+- enjoy coding ...
